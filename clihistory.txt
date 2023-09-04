@@ -1,0 +1,16 @@
+  161  cd javacode
+  162  ls
+  163  ls
+  164  pwd
+  165  cd ..
+  166  pwd
+  167  cd /Users/ahmedabdallah/CISC3115_Ahmed/javacode
+  168  cd ..
+  169  pwd
+  170  ls
+  171  cd javacode
+  172  pwd
+  173  cd ..
+  174  pwd
+  175  ls
+  176  history
