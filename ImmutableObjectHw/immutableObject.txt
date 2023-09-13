@@ -1,0 +1,119 @@
+import java.util.Scanner;
+public class ImmutableObject {
+	public static void main(String[] args) {
+		float fahrenheit;
+		float centigrade;
+		fahrenheit = 98.6f;
+		centigrade = (5.0f / 9.0f) * (fahrenheit - 32.0f);
+		System.out.println("Fahrenheit: " + fahrenheit);
+		System.out.println("Centigrade: " + centigrade);
+		System.out.println();
+		System.out.println("For loop:");
+		for (float i = 0.0f; i <= 40.0f; i = i + 4.0f) {
+			centigrade = (5.0f / 9.0f) * (i - 32.0f);
+			System.out.println("Fahrenheit: " + i + ", Centigrade: " + centigrade);
+		}
+		for (int k = 0; k<= 100; k++) {
+			System.out.print("-");
+		}
+		System.out.println();
+		System.out.println("While Loop:");
+		float j = 0.0f;
+		while (j <= 40.0f) {
+			centigrade = (5.0f / 9.0f) * (j - 32.0f);
+			System.out.println("Fahrenheit: " + j + ", Centigrade: " + centigrade);
+			j = j + 4.0f;
+		}
+		StopChecking();
+	}
+	public static void StopChecking() {
+		for (int p = 0; p < 100; p++) {
+			System.out.print("-");
+		}
+		System.out.println();
+		String[][] myArray = {
+				{"BMW", "Ferrari", "Lambo"},
+				{"pizza", "burger", "dumpling"}
+		};
+		String Cars = myArray[0][0];
+		String Food = myArray[1][2];
+		String isin;
+		String inputwords;
+		Scanner input = new Scanner(System.in);
+		System.out.println("// these are the reults when I enter these variables");
+		while (true) {
+			System.out.print("Enter a word: ");
+			inputwords = input.nextLine();
+			if (inputwords.equals("STOP")) {
+				System.out.println("Program terminated.");
+				break;
+			}
+			boolean found = false;
+			for (String[] array : myArray) {
+				for (String word : array) {
+					if (word.equals(inputwords)) {
+						found = true;
+						System.out.println("inputwords is in the 2D array");
+						break;
+					}
+				}
+				if (found) {
+					break;
+				}
+			}
+			if (!found) {
+				System.out.println("inputwords is not in the 2D array");
+			}
+		}
+		input.close();
+	}
+}
+// the following is the result when I run the program:
+
+Fahrenheit: 98.6
+Centigrade: 37.0
+
+For loop:
+Fahrenheit: 0.0, Centigrade: -17.777779
+Fahrenheit: 4.0, Centigrade: -15.555556
+Fahrenheit: 8.0, Centigrade: -13.333334
+Fahrenheit: 12.0, Centigrade: -11.111112
+Fahrenheit: 16.0, Centigrade: -8.888889
+Fahrenheit: 20.0, Centigrade: -6.666667
+Fahrenheit: 24.0, Centigrade: -4.4444447
+Fahrenheit: 28.0, Centigrade: -2.2222223
+Fahrenheit: 32.0, Centigrade: 0.0
+Fahrenheit: 36.0, Centigrade: 2.2222223
+Fahrenheit: 40.0, Centigrade: 4.4444447
+-----------------------------------------------------------------------------------------------------
+While Loop:
+Fahrenheit: 0.0, Centigrade: -17.777779
+Fahrenheit: 4.0, Centigrade: -15.555556
+Fahrenheit: 8.0, Centigrade: -13.333334
+Fahrenheit: 12.0, Centigrade: -11.111112
+Fahrenheit: 16.0, Centigrade: -8.888889
+Fahrenheit: 20.0, Centigrade: -6.666667
+Fahrenheit: 24.0, Centigrade: -4.4444447
+Fahrenheit: 28.0, Centigrade: -2.2222223
+Fahrenheit: 32.0, Centigrade: 0.0
+Fahrenheit: 36.0, Centigrade: 2.2222223
+Fahrenheit: 40.0, Centigrade: 4.4444447
+----------------------------------------------------------------------------------------------------
+// these are the reults when I enter these variables
+Enter a word: BMW
+inputwords is in the 2D array
+Enter a word: Ferrari
+inputwords is in the 2D array
+Enter a word: Lambo
+inputwords is in the 2D array
+Enter a word: pizza
+inputwords is in the 2D array
+Enter a word: burger
+inputwords is in the 2D array
+Enter a word: dumpling
+inputwords is in the 2D array
+Enter a word: hello
+inputwords is not in the 2D array
+Enter a word: STOP
+Program terminated.
+
