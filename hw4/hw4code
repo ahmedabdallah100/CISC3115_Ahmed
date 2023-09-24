@@ -1,0 +1,48 @@
+public class hw4 {
+    public static void main(String[] args) {
+        Point point = new Point(3, 4);
+        Rectangle box = new Rectangle(0, 0, 100, 200);
+        rectmovleft(box, point);
+        System.out.println("The attributes of the new box:");
+        System.out.println();
+        System.out.println("X attribute: " + box.x);
+        System.out.println();
+        System.out.println("Y attribute: " + box.y);
+        System.out.println();
+        System.out.println("Width of the box: " + box.width);
+        System.out.println();
+        System.out.println("Height of the box: " + box.height);
+    }
+
+    public static void rectmovleft(Rectangle box, Point p) {
+        if (p.x < 0) {
+            throw new IllegalArgumentException("Usage: input x is not legal");
+        }
+
+        box.x = box.x + p.x;
+        box.y = box.y + p.y;
+    }
+}
+class Point {
+	
+    int x;
+    int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+class Rectangle {
+    int x;
+    int y;
+    int width;
+    int height;
+
+    public Rectangle(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+}
