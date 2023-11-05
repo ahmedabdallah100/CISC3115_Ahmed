@@ -1,0 +1,112 @@
+13.1): The classes from options D, E, and F all correctly define a legal abstract class
+
+13.3): 
+	A) - True
+	B) - True
+	C) - False, a subclass of a nonabstract superclass can be abstract
+	D) - False, a subclass can indeed override a concrete method in a superclass to make it abstract
+	E) True
+
+13.4): The program tries to convert numberRef to a double object, however, numberRef is an instance of Integer not a Double
+
+13.5): The program will cause a runtime error due to numberArray[0] being of type Integer and not Double
+
+13.6) //The output of this program is:
+		3
+		3.0
+
+13.7): The problem with the code is that x does not have the compareTo method. Here is the correct code:
+	public class Test {
+    	public static void main(String[] args) {
+    		Integer x = new Integer(3);
+    		System.out.println(x.intValue());
+    		System.out.println(x.compareTo(new Integer(4)));
+    	}
+	}
+
+13.8): To fix the problem the casting in the second print statement needs to change:
+	public class Test {
+    	public static void main(String[] args) {
+    		Number x = new Integer(3);
+    		System.out.println(x.intValue());
+    		System.out.println(((Integer) x.compareTo(new Integer(4))).intValue());
+    	}
+	}
+
+13.13): No, because interfaces are abstract
+
+13.14): No you cannot declare an interface of type A and variable x like A x because interfaces are abstract
+
+13.15): D is a valid and correct interface definition with a single abstract method 'print'.
+
+13.16): The error in the code is that void m1 in the class B needs to be public. Here is the correct code: 
+	interface A {
+    	void m1();
+	}
+	class B implements A {
+		public void m1() {
+			System.out.println("m1");
+		}
+	} 
+
+13.17): If a class implements Comparable, the object of the class can invoke the compareTo method
+
+13.18): public int compareTo(String o), this method allows a String object to be compared to another String object
+
+13.19): No, it will not compile because the code does not have the compareTo method as n2 is an Object. Here is how to fix it:
+	Integer n1 = new Integer(3);
+	Integer n2 = new Integer(4);
+	System.out.println(n1.compareTo(n2));
+
+13.20): By incorporating the Comparable interface, the class's object becomes compatible with methods that expect a Comparable type.
+
+13.21): The Person class does not implement the Comparable interface. Here is the corrected code: 
+	
+	import java.util.Arrays;
+	public class Test {
+	    public static void main(String[] args) {
+	        Person[] persons = {new Person(3), new Person(4), new Person(1)};
+	        Arrays.sort(persons);
+	        for (Person person : persons) {
+	            System.out.println(person.getId());
+	        }
+	    }
+	}
+	class Person implements Comparable<Person> {
+	    private int id;
+	    Person(int id) {
+	        this.id = id;
+	    }
+	    public int getId() {
+	        return id;
+	    }
+	    public int compareTo(Person other) {
+	        return Integer.compare(this.id, other.id);
+	    }
+	}
+
+13.22): No you can't clone because if the object does not implement java.lang.Cloneable. Yes the date class implements cloneable.
+
+13.23): Without the clone method overridden in the House class and without House implementing Cloneable, you'll get an error because clone() is protected in Object, and a exception would occur.
+
+13.24): The output of the code is:
+	True
+	False
+	True
+	
+13.25): The output of the code is:
+	True
+	False
+	list is [New York, Atlanta]
+	list1 is [New York, Atlanta]
+	list2.get(0) is New York
+	list2.size() is 1
+	
+13.26): The issue with the provided code is that the clone() method is not a member of the GeometricObject class.
+
+13.	29): 
+	A) - True
+	B) - True
+	C) - True
+	D) - False, An interface can extend another interface, but can't extend an abstract class
+	E) - False, An abstract class can extend another abstract class, however, it cannot extend an interface
